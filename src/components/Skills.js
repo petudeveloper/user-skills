@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { GiHalfBodyCrawling } from 'react-icons/gi';
+import { BiRun, BiWalk } from 'react-icons/bi';
 import axios from 'axios';
 
 const Skills = () => {
@@ -26,22 +28,24 @@ const Skills = () => {
         setProficient(proficientSkills);
         setNoExperinece(noExperienceSkills);
       });
-    // .then((response) => setProfileSkills(response.data.strengths));
   }, []);
 
   return (
     <div>
       <h2>Novice</h2>
+      <BiWalk />
       {
         novice
          && novice.map((skill) => (<li key={skill.id}>{skill.name}</li>))
       }
       <h2>Proficient</h2>
+      <BiRun />
       {
         proficient
          && proficient.map((skill) => (<li key={skill.id}>{skill.name}</li>))
       }
       <h2>No Experinece</h2>
+      <GiHalfBodyCrawling />
       {
         noExperinece
          && noExperinece.map((skill) => (<li key={skill.id}>{skill.name}</li>))
