@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.iconsContainer {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.logo {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--lightest-grey);
+}
+
+.logoGreen {
+  color: var(--color-green);
+}
+
+.signIn {
+  color: var(--color-green);
+  font-size: 0.8rem;
+}

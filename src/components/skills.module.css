@@ -1,0 +1,31 @@
+.container {
+  padding: 0 15px;
+}
+
+.title {
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
+.skillTitle {
+  font-size: 0.7rem;
+  font-weight: normal;
+  margin: 0;
+}
+
+.skillTitleContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.skillItem {
+  background-color: var(--medium-grey);
+  border-radius: 30px;
+  width: fit-content;
+  padding: 5px 15px;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin: 5px;
+}
