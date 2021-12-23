@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
+import { GiHalfBodyCrawling } from 'react-icons/gi';
+import { BiRun, BiWalk } from 'react-icons/bi';
 import axios from 'axios';
+import styles from './skills.module.css';
 
 const Skills = () => {
   const [novice, setNovice] = useState([]);
@@ -26,26 +29,70 @@ const Skills = () => {
         setProficient(proficientSkills);
         setNoExperinece(noExperienceSkills);
       });
-    // .then((response) => setProfileSkills(response.data.strengths));
   }, []);
 
   return (
-    <div>
-      <h2>Novice</h2>
-      {
-        novice
-         && novice.map((skill) => (<li key={skill.id}>{skill.name}</li>))
-      }
-      <h2>Proficient</h2>
-      {
-        proficient
-         && proficient.map((skill) => (<li key={skill.id}>{skill.name}</li>))
-      }
-      <h2>No Experinece</h2>
-      {
-        noExperinece
-         && noExperinece.map((skill) => (<li key={skill.id}>{skill.name}</li>))
-      }
+    <div className={styles.container}>
+      <h3 className={styles.title}>Skills and Interests:</h3>
+      <div>
+        <div className={styles.skillTitleContainer}>
+          <BiRun />
+          <h4 className={styles.skillTitle}>Proficient</h4>
+        </div>
+        <div>
+          {
+            proficient
+            && proficient.map((skill) => (
+              <span
+                className={styles.skillItem}
+                key={skill.id}
+              >
+                {skill.name}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+
+      <div>
+        <div className={styles.skillTitleContainer}>
+          <BiWalk />
+          <h4 className={styles.skillTitle}>Novice</h4>
+        </div>
+        <div>
+          {
+            novice
+            && novice.map((skill) => (
+              <span
+                className={styles.skillItem}
+                key={skill.id}
+              >
+                {skill.name}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+
+      <div>
+        <div className={styles.skillTitleContainer}>
+          <GiHalfBodyCrawling />
+          <h4 className={styles.skillTitle}>No Experinece</h4>
+        </div>
+        <div>
+          {
+            noExperinece
+            && noExperinece.map((skill) => (
+              <span
+                className={styles.skillItem}
+                key={skill.id}
+              >
+                {skill.name}
+              </span>
+            ))
+          }
+        </div>
+      </div>
     </div>
   );
 };
