@@ -1,6 +1,6 @@
 # User Skills Page
 
-> A web page app consumes an API to fetch users' data and display their list of skills.
+> A web page app that consumes an API to fetch users' data and display their list of skills.
 
 ![screenshot](./docs/Capture.PNG)
 
