@@ -5,7 +5,7 @@ import styles from './person.module.css';
 const Person = () => {
   const [profile, setProfile] = useState({});
   useEffect(() => {
-    axios.get('https://bio.torre.co/api/bios/davidalvarezmazzo')
+    axios.get('/api/bios/davidalvarezmazzo')
       .then((response) => {
         const data = response.data.person;
         setProfile(data);
