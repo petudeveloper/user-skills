@@ -9,7 +9,7 @@ const Skills = () => {
   const [proficient, setProficient] = useState([]);
   const [noExperinece, setNoExperinece] = useState([]);
   useEffect(() => {
-    axios.get('bio/api/bios/davidalvarezmazzo')
+    axios.get('/bio/api/bios/davidalvarezmazzo')
       .then((response) => {
         const data = response.data.strengths;
         const noviceSkills = [];
