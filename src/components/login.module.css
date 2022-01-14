@@ -11,7 +11,7 @@
   text-align: center;
 }
 
-.labels{
+.labels {
   display: flex;
   flex-direction: column;
 }
