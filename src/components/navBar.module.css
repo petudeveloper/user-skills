@@ -24,7 +24,17 @@
   color: var(--color-green);
 }
 
-.signIn {
+.signIn,
+.logout {
   color: var(--color-green);
   font-size: 0.8rem;
+}
+
+.logout {
+  background-color: transparent;
+  border: none;
+}
+
+.logout:hover {
+  cursor: pointer;
 }

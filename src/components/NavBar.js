@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types';
 import { FaBars } from 'react-icons/fa';
 import { BsSearch } from 'react-icons/bs';
 import styles from './navBar.module.css';
 
-const NavBar = () => (
+const NavBar = ({ logStatus, logout }) => (
   <header>
     <nav className={styles.container}>
       <div className={styles.iconsContainer}>
@@ -14,10 +15,15 @@ const NavBar = () => (
       </div>
       <div className={styles.iconsContainer}>
         <BsSearch />
-        <span className={styles.signIn}>SIGN IN</span>
+        <span className={styles.signIn}>{logStatus ? <button className={styles.logout} type="button" onClick={logout}>LOG OUT</button> : 'SIGN IN' }</span>
       </div>
     </nav>
   </header>
 );
+
+NavBar.propTypes = {
+  logStatus: PropTypes.bool.isRequired,
+  logout: PropTypes.func.isRequired,
+};
 
 export default NavBar;
