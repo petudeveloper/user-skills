@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ProfilePage from './pages/ProfilePage';
 import Login from './components/Login';
+import NavBar from './components/NavBar';
 
 function App() {
   const [logStatus, setLogStatus] = useState(false);
@@ -9,9 +10,16 @@ function App() {
     setLogStatus(true);
   };
 
+  const logout = () => {
+    setLogStatus(false);
+  };
+
   return (
     <div className="App">
-      {logStatus ? <ProfilePage /> : <Login updateStatus={updateStatus} />}
+      <NavBar logStatus={logStatus} logout={logout} />
+      {logStatus
+        ? <ProfilePage updateStatus={updateStatus} />
+        : <Login updateStatus={updateStatus} />}
     </div>
   );
 }

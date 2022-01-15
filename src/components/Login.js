@@ -17,7 +17,6 @@ const Login = ({ updateStatus }) => {
       password: passwordNameReg,
     }).then((res) => {
       if (res.data) {
-        console.log(res.data);
         updateStatus(true);
       }
     });
@@ -31,7 +30,6 @@ const Login = ({ updateStatus }) => {
       password: passwordNameLogin,
     }).then((res) => {
       if (res.data) {
-        console.log(res.data);
         updateStatus(true);
       }
     });
@@ -41,40 +39,44 @@ const Login = ({ updateStatus }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.formContainer}>
-        <h1 className={styles.title}>Registration</h1>
+      <h1 className={styles.welcome}>Welcome to User Skills App</h1>
+      <section className={styles.forms}>
+        <div className={styles.formContainer}>
+          <h2 className={styles.title}>Registration</h2>
 
-        <div className={styles.labels}>
-          <label htmlFor="usernameReg">
-            Username:
-            {' '}
-            <input type="text" id="usernameReg" value={userNameReg} onChange={(e) => { setUserNameReg(e.target.value); }} />
-          </label>
-          <label htmlFor="passwordReg">
-            Password:
-            {' '}
-            <input type="text" id="passwordReg" value={passwordNameReg} onChange={(e) => { setPasswordNameReg(e.target.value); }} />
-          </label>
+          <div className={styles.labels}>
+            <label htmlFor="usernameReg">
+              Username:
+              {' '}
+              <input type="text" id="usernameReg" value={userNameReg} onChange={(e) => { setUserNameReg(e.target.value); }} />
+            </label>
+            <label htmlFor="passwordReg">
+              Password:
+              {' '}
+              <input type="text" id="passwordReg" value={passwordNameReg} onChange={(e) => { setPasswordNameReg(e.target.value); }} />
+            </label>
+          </div>
+          <button className={styles.loginBtn} type="button" onClick={register}>Register</button>
         </div>
-        <button className={styles.loginBtn} type="button" onClick={register}>Register</button>
-      </div>
 
-      <div className={styles.formContainer}>
-        <h1 className={styles.title}>Login</h1>
-        <div className={styles.labels}>
-          <label htmlFor="usernameLogin">
-            Username:
-            {' '}
-            <input type="text" id="passwordLogin" value={userNameLogin} onChange={(e) => { setUserNameLogin(e.target.value); }} />
-          </label>
-          <label htmlFor="passwordLogin">
-            Password:
-            {' '}
-            <input type="text" id="passwordLogin" value={passwordNameLogin} onChange={(e) => { setPasswordNameLogin(e.target.value); }} />
-          </label>
+        <div className={styles.formContainer}>
+          <h2 className={styles.title}>Login</h2>
+          <div className={styles.labels}>
+            <label htmlFor="usernameLogin">
+              Username:
+              {' '}
+              <input type="text" id="passwordLogin" value={userNameLogin} onChange={(e) => { setUserNameLogin(e.target.value); }} />
+            </label>
+            <label htmlFor="passwordLogin">
+              Password:
+              {' '}
+              <input type="text" id="passwordLogin" value={passwordNameLogin} onChange={(e) => { setPasswordNameLogin(e.target.value); }} />
+            </label>
+          </div>
+          <button className={styles.loginBtn} onClick={login} type="button">Login</button>
         </div>
-        <button className={styles.loginBtn} onClick={login} type="button">Login</button>
-      </div>
+      </section>
+
     </div>
   );
 };
