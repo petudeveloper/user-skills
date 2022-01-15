@@ -1,8 +1,11 @@
 # User Skills Page
 
-> A web page app that consumes an API to fetch users' data and display their list of skills.
+> An MVP(Minimum viable product) web page app that consumes an API to fetch users' data, login system, and display a user list of skills. This is the front end of a full-stack app, you can find the back end [here](https://github.com/petudeveloper/user-skills-backend).
 
 ![screenshot](./docs/Capture.PNG)
+
+- The application uses the [backend](https://github.com/petudeveloper/user-skills-backend) to do user authorization and authentication.
+- After login, the rendered information comes from a fetch done to the resource `https://bio.torre.co/api/bios/davidalvarezmazzo`.
 
 ## Built With
 
